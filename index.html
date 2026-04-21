@@ -1878,18 +1878,34 @@ async function handleSubmit(e) {
   const first   = name.trim().split(' ')[0];
 
   try {
-    // Netlify Forms — видно в адмінці + надходить email
-    const fd = new FormData();
-    fd.append('form-name', 'contact');
-    fd.append('name',      name.trim());
-    fd.append('email',     email.trim());
-    fd.append('subject',   topic || 'General Inquiry');
-    fd.append('message',   message.trim());
+    // 1. Netlify Forms — для перегляду в адмінці
+    const fdNetlify = new FormData();
+    fdNetlify.append('form-name', 'contact');
+    fdNetlify.append('name',      name.trim());
+    fdNetlify.append('email',     email.trim());
+    fdNetlify.append('subject',   topic || 'General Inquiry');
+    fdNetlify.append('message',   message.trim());
 
-    const res = await fetch('/', {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(fd).toString()
+      body: new URLSearchParams(fdNetlify).toString()
+    }).catch(() => {}); // silent — не блокує основний сабміт
+
+    // 2. FormSubmit.co — для email на pokornynatalia@gmail.com
+    const fdEmail = new FormData();
+    fdEmail.append('name',      name.trim());
+    fdEmail.append('email',     email.trim());
+    fdEmail.append('_replyto',  email.trim());
+    fdEmail.append('_subject',  'yarema.global — ' + (topic || 'Message') + ' від ' + name.trim());
+    fdEmail.append('_captcha',  'false');
+    fdEmail.append('_template', 'table');
+    fdEmail.append('message',   message.trim());
+
+    const res = await fetch('https://formsubmit.co/pokornynatalia@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: fdEmail
     });
 
     if (!res.ok) throw new Error('HTTP ' + res.status);
