@@ -818,6 +818,8 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   .dark-split{padding:2.5rem 1rem;}
 }
 </style>
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -1936,5 +1938,17 @@ function doSubmit(e) { return handleSubmit(e); }
     <button onclick="closeThanks()" style="background:#0C0C0C;color:#fff;border:none;border-radius:8px;padding:0.85rem 2.2rem;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#E8A020'" onmouseout="this.style.background='#0C0C0C'">Close ✕</button>
   </div>
 </div>
+<script>
+  // Netlify Identity — handle invite/recovery tokens
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
