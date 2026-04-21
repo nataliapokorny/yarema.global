@@ -1,0 +1,11 @@
+{
+  "title": "Unlock the power of nanoscience",
+  "para1": "Maksym Yarema is a researcher, educator, and science communicator dedicated to exploring nanomaterials for sustainable electronics, energy technologies, and next-generation memory devices.",
+  "para2": "With over 17 years of research experience and major grants including the ERC Starting Grant and SNSF Ambizione Fellowship, Maksym bridges the gap between cutting-edge science and human understanding.",
+  "years": "17+",
+  "progress": [
+    { "label": "Research Excellence", "value": 92 },
+    { "label": "Science Communication", "value": 88 },
+    { "label": "International Collaboration", "value": 95 }
+  ]
+}

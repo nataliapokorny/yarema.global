@@ -1,0 +1,157 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/yarema-global
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "static/uploads"
+public_folder: "/static/uploads"
+
+collections:
+  # ─── SITE SETTINGS ───────────────────────────────────────
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+      - name: "general"
+        label: "General Info"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Full Name", name: "full_name", widget: "string", default: "Maksym Yarema" }
+          - { label: "Role / Tagline", name: "role", widget: "string", default: "Researcher · Educator · Science Communicator" }
+          - { label: "Email (displayed)", name: "email", widget: "string", default: "yaremam@ethz.ch" }
+          - { label: "Contact email (receives form)", name: "contact_email", widget: "string", default: "pokornynatalia@gmail.com" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Making Science Visible & Human" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text" }
+          - label: "Stat Cards"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
+
+  # ─── ABOUT ───────────────────────────────────────────────
+  - name: "about"
+    label: "👤 About"
+    files:
+      - name: "about"
+        label: "About Section"
+        file: "_data/about.json"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Paragraph 1", name: "para1", widget: "text" }
+          - { label: "Paragraph 2", name: "para2", widget: "text" }
+          - { label: "Years of Research", name: "years", widget: "string", default: "17+" }
+          - label: "Progress Bars"
+            name: "progress"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value (%)", name: "value", widget: "number", value_type: "int", min: 0, max: 100 }
+
+  # ─── RESEARCH ────────────────────────────────────────────
+  - name: "research"
+    label: "🔬 Research"
+    files:
+      - name: "research"
+        label: "Research Section"
+        file: "_data/research.json"
+        fields:
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Research Areas"
+            name: "areas"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+          - label: "Grants"
+            name: "grants"
+            widget: "list"
+            field: { label: "Grant name", name: "name", widget: "string" }
+
+  # ─── PUBLICATIONS ─────────────────────────────────────────
+  - name: "publications"
+    label: "📄 Publications"
+    folder: "_data/publications"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - { label: "DOI / Link", name: "doi", widget: "string", required: false }
+      - { label: "Authors", name: "authors", widget: "string" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  # ─── TEACHING ────────────────────────────────────────────
+  - name: "teaching"
+    label: "🎓 Teaching"
+    files:
+      - name: "teaching"
+        label: "Teaching Section"
+        file: "_data/teaching.json"
+        fields:
+          - label: "Timeline Items"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+          - label: "Featured Course"
+            name: "course"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Target Audience", name: "target", widget: "string" }
+              - label: "Topics"
+                name: "topics"
+                widget: "list"
+                field: { label: "Topic", name: "topic", widget: "string" }
+
+  # ─── INTERNATIONAL ───────────────────────────────────────
+  - name: "international"
+    label: "🌍 International"
+    files:
+      - name: "international"
+        label: "International Section"
+        file: "_data/international.json"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Grant Name", name: "grant", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - label: "Outcomes"
+                name: "outcomes"
+                widget: "list"
+                field: { label: "Outcome", name: "outcome", widget: "string" }
+
+  # ─── MEDIA / NEWS ─────────────────────────────────────────
+  - name: "media"
+    label: "📰 Media & News"
+    folder: "_data/media"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["Podcast", "Interview", "Article", "Press Release", "Video"] }
+      - { label: "Publication / Platform", name: "platform", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Description", name: "desc", widget: "text", required: false }

@@ -1,0 +1,39 @@
+{
+  "intro": "Exploring the frontier of nanoscale materials — from design and synthesis to real-world applications in electronics, energy, and memory technologies.",
+  "areas": [
+    {
+      "num": "01",
+      "icon": "🔬",
+      "title": "Nanomaterials & Nanoscience",
+      "desc": "Design, synthesis, and characterization of nanoscale materials with unique physical and chemical properties.",
+      "tags": ["Colloidal Nanocrystals", "Semiconductor Nanomaterials", "Nanoscale Synthesis"]
+    },
+    {
+      "num": "02",
+      "icon": "🔋",
+      "title": "Electronic Materials & Memory Devices",
+      "desc": "Advanced materials for electronic components and next-generation memory technologies.",
+      "tags": ["Emerging Memory Devices", "Electronic Materials", "Charge Transport"]
+    },
+    {
+      "num": "03",
+      "icon": "⚡",
+      "title": "Sustainable Electronics & Energy",
+      "desc": "Materials for sustainable and energy-efficient electronic technologies.",
+      "tags": ["Energy Storage", "Eco-friendly Electronics", "Sustainable Systems"]
+    },
+    {
+      "num": "04",
+      "icon": "🔗",
+      "title": "Interdisciplinary Materials Science",
+      "desc": "Chemistry, physics, and materials science combined to develop advanced functional materials.",
+      "tags": ["Interdisciplinary Research", "Functional Materials", "Advanced Design"]
+    }
+  ],
+  "grants": [
+    "ERC Starting Grant",
+    "SNSF Ambizione Fellowship",
+    "SNSF R'Equip Grant",
+    "Marie Curie Fellowship"
+  ]
+}
