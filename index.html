@@ -864,7 +864,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       Making Science<br>
       <em>Visible &amp; Human</em>
     </h1>
-    <p class="hero-desc">Researcher, educator, and science communicator exploring nanomaterials for sustainable electronics, energy technologies, and next-generation memory devices.</p>
+    <p class="hero-desc" data-cms="settings.hero_desc">Researcher, educator, and science communicator exploring nanomaterials for sustainable electronics, energy technologies, and next-generation memory devices.</p>
     <div class="hero-ctas">
       <a href="#research" class="btn btn-white">Explore Research</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -878,12 +878,12 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     </div>
     <div class="hero-stats-panel">
       <div class="hero-stat-card">
-        <span class="hero-stat-num">80+</span>
-        <p class="hero-stat-desc">Publications in peer-reviewed journals worldwide.</p>
+        <span class="hero-stat-num" data-cms="settings.stats[0].num">80+</span>
+        <p class="hero-stat-desc" data-cms="settings.stats[0].desc">Publications in peer-reviewed journals worldwide.</p>
       </div>
       <div class="hero-stat-card">
-        <span class="hero-stat-num">50+</span>
-        <p class="hero-stat-desc">International conference talks across Europe and beyond.</p>
+        <span class="hero-stat-num" data-cms="settings.stats[1].num">50+</span>
+        <p class="hero-stat-desc" data-cms="settings.stats[1].desc">International conference talks across Europe and beyond.</p>
       </div>
     </div>
   </div>
@@ -904,17 +904,17 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       <div class="research-sticky fade-in">
         <div class="section-eyebrow">Research</div>
         <h2 class="section-title">Research<br><em>Interests</em></h2>
-        <p class="research-intro">Exploring the frontier of nanoscale materials — from design and synthesis to real-world applications in electronics, energy, and memory technologies.</p>
+        <p class="research-intro" data-cms="research.intro">Exploring the frontier of nanoscale materials — from design and synthesis to real-world applications in electronics, energy, and memory technologies.</p>
         <a href="#contact" class="btn btn-navy">Collaborate →</a>
       </div>
       <div class="fade-in">
-        <div class="research-cards">
+        <div class="research-cards" data-cms-container="research.areas">
           <div class="research-card"><span class="research-num">01</span><div><h3>Nanomaterials &amp; Nanoscience</h3><p>Design, synthesis, and characterization of nanoscale materials with unique physical and chemical properties.</p><div class="tags"><span class="tag">Colloidal Nanocrystals</span><span class="tag">Semiconductor Nanomaterials</span><span class="tag">Nanoscale Synthesis</span><span class="tag">Structure–Property Relations</span></div></div></div>
           <div class="research-card"><span class="research-num">02</span><div><h3>Electronic Materials &amp; Memory Devices</h3><p>Advanced materials for electronic components and next-generation memory technologies.</p><div class="tags"><span class="tag">Emerging Memory Devices</span><span class="tag">Electronic Materials</span><span class="tag">Charge Transport</span><span class="tag">Nanoscale Systems</span></div></div></div>
           <div class="research-card"><span class="research-num">03</span><div><h3>Sustainable Electronics &amp; Energy</h3><p>Materials for sustainable and energy-efficient electronic technologies.</p><div class="tags"><span class="tag">Energy Storage Materials</span><span class="tag">Eco-friendly Electronics</span><span class="tag">Nanomaterials for Energy</span><span class="tag">Sustainable Systems</span></div></div></div>
           <div class="research-card"><span class="research-num">04</span><div><h3>Interdisciplinary Materials Science</h3><p>Chemistry, physics, and materials science combined to develop advanced functional materials.</p><div class="tags"><span class="tag">Interdisciplinary Research</span><span class="tag">Nanostructured Materials</span><span class="tag">Functional Materials</span><span class="tag">Advanced Materials Design</span></div></div></div>
         </div>
-        <div class="grants-bar">
+        <div class="grants-bar" data-cms-container="research.grants">
           <span class="grants-label">Key Grants</span>
           <span class="grant-item">ERC Starting Grant</span>
           <span class="grant-item">SNSF Ambizione Fellowship</span>
@@ -973,8 +973,8 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="section-eyebrow">Teaching</div>
         <h2 class="section-title">Education &amp;<br><em>Innovation</em></h2>
         <div class="teaching-projects">
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;">Prof. Dr. Maksym Yarema is an Assistant Professor at ETH Zurich, where he leads the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para1">Prof. Dr. Maksym Yarema is an Assistant Professor at ETH Zurich, where he leads the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
           <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;">At ETH Zurich, Maksym teaches Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
         </div>
       </div>
@@ -1653,7 +1653,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       <div class="contact-header-right">
         <div>
           <div class="contact-role">Researcher · Educator · Science Communicator</div>
-          <div class="contact-detail"><span class="ci">📧</span><a href="mailto:yaremam@ethz.ch">yaremam@ethz.ch</a></div>
+          <div class="contact-detail"><span class="ci">📧</span><a href="mailto:yaremam@ethz.ch" data-cms="settings.email" data-cms-href-prefix="mailto:">yaremam@ethz.ch</a></div>
         </div>
         <div>
           <div class="profiles-label">Academic Profiles</div>
@@ -1821,6 +1821,103 @@ try {
     draw();
   }
 } catch(e) { console.warn('Canvas error:', e); }
+
+/* ── CMS Data Loader (Decap/Netlify CMS) ──
+   Reads JSON files from /_data/ and binds values to elements with data-cms / data-cms-container.
+   If loading fails (e.g. file:// protocol or missing JSON), HTML keeps its default text — site never breaks.
+*/
+(function loadCMSData() {
+  // Skip on file:// protocol — fetch can't load JSON locally without a server.
+  if (location.protocol === 'file:') {
+    console.info('[CMS] Skipping JSON load on file:// — using HTML defaults.');
+    return;
+  }
+
+  const sources = {
+    settings: '_data/settings.json',
+    about:    '_data/about.json',
+    research: '_data/research.json'
+  };
+
+  // Helper: resolve "settings.stats[0].num" against a data object
+  function resolvePath(obj, path) {
+    try {
+      return path.split('.').reduce((o, key) => {
+        if (o == null) return undefined;
+        const m = key.match(/^([^[]+)(?:\[(\d+)\])?$/);
+        if (!m) return undefined;
+        const prop = m[1];
+        const idx  = m[2];
+        let v = o[prop];
+        if (idx != null) v = v && v[parseInt(idx, 10)];
+        return v;
+      }, obj);
+    } catch (e) { return undefined; }
+  }
+
+  // Escape HTML for safe insertion
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Load all JSON files in parallel; if any fails, that namespace stays empty.
+  const promises = Object.entries(sources).map(([key, url]) =>
+    fetch(url, { cache: 'no-cache' })
+      .then(r => r.ok ? r.json() : null)
+      .catch(() => null)
+      .then(data => [key, data])
+  );
+
+  Promise.all(promises).then(results => {
+    const data = {};
+    results.forEach(([key, val]) => { if (val) data[key] = val; });
+    if (!Object.keys(data).length) {
+      console.info('[CMS] No JSON loaded — using HTML defaults.');
+      return;
+    }
+
+    // ── 1. Simple text bindings via data-cms="settings.hero_desc" ──
+    document.querySelectorAll('[data-cms]').forEach(el => {
+      const path = el.getAttribute('data-cms');
+      const val = resolvePath(data, path);
+      if (val == null || val === '') return; // keep default
+
+      // Special: if element has data-cms-href-prefix, also update href
+      const prefix = el.getAttribute('data-cms-href-prefix');
+      if (prefix && el.tagName === 'A') {
+        el.setAttribute('href', prefix + val);
+      }
+      el.textContent = val;
+    });
+
+    // ── 2. List/container bindings via data-cms-container="research.areas" ──
+    document.querySelectorAll('[data-cms-container]').forEach(el => {
+      const path = el.getAttribute('data-cms-container');
+      const val = resolvePath(data, path);
+      if (!Array.isArray(val) || val.length === 0) return; // keep default
+
+      // research.areas → research cards
+      if (path === 'research.areas') {
+        el.innerHTML = val.map(area => {
+          const tags = (area.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+          return `<div class="research-card"><span class="research-num">${esc(area.num || '')}</span><div><h3>${esc(area.title || '')}</h3><p>${esc(area.desc || '')}</p><div class="tags">${tags}</div></div></div>`;
+        }).join('');
+      }
+
+      // research.grants → grants bar (preserve "Key Grants" label)
+      else if (path === 'research.grants') {
+        const items = val.map(g => `<span class="grant-item">${esc(g)}</span>`).join('');
+        el.innerHTML = `<span class="grants-label">Key Grants</span>${items}`;
+      }
+    });
+
+    console.info('[CMS] Data applied:', Object.keys(data));
+  });
+})();
 
 /* ── Topic chips ── */
 function selectChip(el, topic) {
