@@ -6,28 +6,28 @@
       "icon": "🔬",
       "title": "Nanomaterials & Nanoscience",
       "desc": "Design, synthesis, and characterization of nanoscale materials with unique physical and chemical properties.",
-      "tags": ["Colloidal Nanocrystals", "Semiconductor Nanomaterials", "Nanoscale Synthesis"]
+      "tags": ["Colloidal Nanocrystals", "Semiconductor Nanomaterials", "Nanoscale Synthesis", "Structure–Property Relations"]
     },
     {
       "num": "02",
       "icon": "🔋",
       "title": "Electronic Materials & Memory Devices",
       "desc": "Advanced materials for electronic components and next-generation memory technologies.",
-      "tags": ["Emerging Memory Devices", "Electronic Materials", "Charge Transport"]
+      "tags": ["Emerging Memory Devices", "Electronic Materials", "Charge Transport", "Nanoscale Systems"]
     },
     {
       "num": "03",
       "icon": "⚡",
       "title": "Sustainable Electronics & Energy",
       "desc": "Materials for sustainable and energy-efficient electronic technologies.",
-      "tags": ["Energy Storage", "Eco-friendly Electronics", "Sustainable Systems"]
+      "tags": ["Energy Storage Materials", "Eco-friendly Electronics", "Nanomaterials for Energy", "Sustainable Systems"]
     },
     {
       "num": "04",
       "icon": "🔗",
       "title": "Interdisciplinary Materials Science",
       "desc": "Chemistry, physics, and materials science combined to develop advanced functional materials.",
-      "tags": ["Interdisciplinary Research", "Functional Materials", "Advanced Design"]
+      "tags": ["Interdisciplinary Research", "Nanostructured Materials", "Functional Materials", "Advanced Materials Design"]
     }
   ],
   "grants": [
