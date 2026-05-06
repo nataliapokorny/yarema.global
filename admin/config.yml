@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: nataliapokorny/yarema.global
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
