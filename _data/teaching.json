@@ -1,0 +1,34 @@
+{
+  "timeline": [
+    {
+      "period": "2019 – Present",
+      "title": "Emerging Memory Technologies",
+      "desc": "Course on next-generation electronic memory devices and colloidal nanomaterials. Research-integrated curriculum bridging cutting-edge lab work with academic teaching.",
+      "tags": ["ETH Zurich", "Lecturer"]
+    },
+    {
+      "period": "2019 – Present",
+      "title": "Chemistry of Devices and Technologies",
+      "desc": "Undergraduate course on chemistry fundamentals in the context of electronic devices and modern technology applications.",
+      "tags": ["ETH Zurich", "Lecturer"]
+    },
+    {
+      "period": "2019 – Present",
+      "title": "Didactic Innovation Program",
+      "desc": "Part of the ETH Zurich Didactic Fellows program, developing new teaching methods and approaches for science and engineering education.",
+      "tags": ["ETH Didactic Fellow"]
+    }
+  ],
+  "course": {
+    "title": "Accessible Speaking for Scientists",
+    "desc": "Learn to communicate scientific ideas clearly, confidently, and effectively — without losing depth or rigor.",
+    "target": "PhD students · Postdocs · Early-career researchers",
+    "topics": [
+      "Science storytelling and narrative structure",
+      "Visual communication and data presentation",
+      "Public speaking techniques for scientists",
+      "Translating complex ideas for non-specialists",
+      "Media interaction and science journalism basics"
+    ]
+  }
+}

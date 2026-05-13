@@ -1,0 +1,40 @@
+{
+  "intro": "Building bridges across institutions and disciplines across Europe and beyond.",
+  "projects": [
+    {
+      "period": "2024 – 2026",
+      "grant": "International Project",
+      "title": "ETH–KSE Tandem Teaching Program",
+      "desc": "Developing international collaboration in engineering education through joint teaching activities and knowledge exchange between ETH Zurich and Kyiv School of Economics.",
+      "outcomes": ["International collaboration", "Innovative methods", "Joint initiatives"]
+    },
+    {
+      "period": "2024 – Present",
+      "grant": "Educational Innovation",
+      "title": "Teaching Innovation — Emerging Memory Technologies",
+      "desc": "Integrating cutting-edge research directly into the Emerging Memory Technologies course curriculum, bridging research and academic teaching.",
+      "outcomes": ["Research-integrated curriculum", "Innovative pedagogy", "Interdisciplinary approach"]
+    },
+    {
+      "period": "2019 – 2025",
+      "grant": "ERC Starting Grant",
+      "title": "Colloidal Nanomaterials for Emerging Memory Devices",
+      "desc": "Development and investigation of colloidal nanomaterials for next-generation electronic memory and data storage.",
+      "outcomes": ["New nanomaterials developed", "Electronic properties investigated", "Publications in leading journals"]
+    },
+    {
+      "period": "2016 – 2019",
+      "grant": "SNSF Ambizione Fellowship",
+      "title": "Nanomaterials for Memory Technologies",
+      "desc": "Novel nanomaterials for advanced electronic memory technologies combining chemistry, physics, and materials science.",
+      "outcomes": ["New electronic materials", "Interdisciplinary nanoscience", "International publications"]
+    },
+    {
+      "period": "2020",
+      "grant": "SNSF R'Equip Grant",
+      "title": "Advanced Equipment for Nanomaterials Research",
+      "desc": "Acquisition of advanced scientific equipment to expand nanomaterials research laboratory capabilities.",
+      "outcomes": ["Improved research infrastructure", "Expanded experimental capacity"]
+    }
+  ]
+}
