@@ -94,17 +94,13 @@ collections:
         label: "Teaching Section"
         file: "_data/teaching.json"
         fields:
-          - label: "Timeline Items"
-            name: "timeline"
-            widget: "list"
+          - label: "Text Content"
+            name: "paragraphs"
+            widget: "object"
             fields:
-              - { label: "Period", name: "period", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-              - label: "Tags"
-                name: "tags"
-                widget: "list"
-                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Paragraph 1", name: "para1", widget: "text" }
+              - { label: "Paragraph 2", name: "para2", widget: "text" }
+              - { label: "Paragraph 3", name: "para3", widget: "text" }
           - label: "Featured Course"
             name: "course"
             widget: "object"
