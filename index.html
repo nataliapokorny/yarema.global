@@ -902,40 +902,25 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
 }
 
 /* ── Teaching timeline (CMS) ── */
-.t-item{padding:1.2rem 0;border-bottom:1px solid var(--border);}
+.t-item{padding:1.1rem 0;border-bottom:1px solid var(--border);}
 .t-item:last-child{border-bottom:none;}
-.t-meta{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.5rem;}
-.t-period{font-family:var(--font-mono);font-size:0.7rem;color:var(--amber);letter-spacing:0.08em;}
-.t-tag{font-size:0.7rem;background:rgba(74,111,165,0.12);color:var(--steel);border-radius:20px;padding:0.15rem 0.6rem;}
-.t-item h4{font-size:0.95rem;color:var(--navy);margin-bottom:0.3rem;font-weight:600;}
-.t-item p{font-size:0.85rem;color:var(--muted);line-height:1.7;margin:0;}
-
+.t-meta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.4rem;}
+.t-period{font-family:var(--font-mono);font-size:.7rem;color:var(--amber);letter-spacing:.08em;}
+.t-tag{font-size:.7rem;background:rgba(74,111,165,.12);color:var(--steel);border-radius:20px;padding:.15rem .6rem;}
+.t-item h4{font-size:.95rem;color:var(--navy);margin-bottom:.3rem;font-weight:600;}
+.t-item p{font-size:.85rem;color:var(--muted);line-height:1.7;margin:0;}
 /* ── Media list (CMS) ── */
-.media-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
-.media-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem;transition:box-shadow 0.2s;}
-.media-item:hover{box-shadow:0 4px 20px rgba(28,43,74,0.09);}
-.media-item-meta{display:flex;gap:0.6rem;align-items:center;margin-bottom:0.5rem;}
-.media-item-type{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--amber);text-transform:uppercase;}
-.media-item-year{font-size:0.75rem;color:var(--muted);}
-.media-item-platform{font-size:0.78rem;color:var(--steel);font-weight:500;margin-bottom:0.3rem;}
-.media-item-title{font-size:0.92rem;color:var(--navy);font-weight:600;margin:0 0 0.4rem;}
-.media-item-desc{font-size:0.82rem;color:var(--muted);line-height:1.65;margin:0 0 0.6rem;}
-.media-item-link{font-size:0.8rem;color:var(--steel);font-weight:500;text-decoration:none;}
+.media-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
+.media-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.2rem;transition:box-shadow .2s;}
+.media-item:hover{box-shadow:0 4px 18px rgba(28,43,74,.09);}
+.media-item-meta{display:flex;gap:.6rem;align-items:center;margin-bottom:.4rem;}
+.media-item-type{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;}
+.media-item-year{font-size:.75rem;color:var(--muted);}
+.media-item-platform{font-size:.78rem;color:var(--steel);font-weight:500;margin-bottom:.25rem;}
+.media-item-title{font-size:.9rem;color:var(--navy);font-weight:600;margin:0 0 .35rem;}
+.media-item-desc{font-size:.81rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem;}
+.media-item-link{font-size:.8rem;color:var(--steel);font-weight:500;text-decoration:none;}
 .media-item-link:hover{color:var(--amber);}
-
-/* ── Publications list (CMS) ── */
-.pub-list{display:flex;flex-direction:column;gap:1rem;}
-.pub-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.5rem;transition:box-shadow 0.2s;}
-.pub-item:hover{box-shadow:0 4px 20px rgba(28,43,74,0.08);}
-.pub-featured{border-left:3px solid var(--amber);}
-.pub-meta{display:flex;gap:0.8rem;align-items:center;margin-bottom:0.4rem;flex-wrap:wrap;}
-.pub-year{font-family:var(--font-mono);font-size:0.72rem;color:var(--amber);}
-.pub-journal{font-size:0.78rem;color:var(--steel);font-weight:500;}
-.pub-badge{font-size:0.65rem;background:var(--amber);color:white;padding:0.1rem 0.5rem;border-radius:20px;letter-spacing:0.05em;}
-.pub-title{font-size:0.95rem;color:var(--navy);font-weight:600;margin-bottom:0.25rem;line-height:1.5;}
-.pub-authors{font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;line-height:1.55;}
-.pub-doi{font-size:0.8rem;color:var(--steel);text-decoration:none;font-weight:500;}
-.pub-doi:hover{color:var(--amber);}
 </style>
 </head>
 <body>
@@ -954,7 +939,6 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     <li><a href="#research">Research</a></li>
     <li><a href="#teaching">Teaching</a></li>
     <li><a href="#international">International</a></li>
-    <li><a href="#publications">Publications</a></li>
     <li><a href="#communication">Communication</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -965,7 +949,6 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   <a href="#research" onclick="closeMobileMenu()">Research</a>
   <a href="#teaching" onclick="closeMobileMenu()">Teaching</a>
   <a href="#international" onclick="closeMobileMenu()">International</a>
-  <a href="#publications" onclick="closeMobileMenu()">Publications</a>
   <a href="#communication" onclick="closeMobileMenu()">Communication</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
@@ -1093,10 +1076,9 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="section-eyebrow">Teaching</div>
         <h2 class="section-title">Education &amp;<br><em>Innovation</em></h2>
         <div class="teaching-projects" id="cms-teaching-timeline">
-          <!-- CMS: populated from _data/teaching.json → timeline -->
-          <div class="t-item"><div class="t-meta"><span class="t-period">2019 – Present</span><span class="t-tag">ETH Zurich</span></div><h4>Emerging Memory Technologies</h4><p>Course on next-generation electronic memory devices and colloidal nanomaterials. Research-integrated curriculum bridging cutting-edge lab work with academic teaching.</p></div>
-          <div class="t-item"><div class="t-meta"><span class="t-period">2019 – Present</span><span class="t-tag">ETH Zurich</span></div><h4>Chemistry of Devices and Technologies</h4><p>Undergraduate course on chemistry fundamentals in the context of electronic devices and modern technology applications.</p></div>
-          <div class="t-item"><div class="t-meta"><span class="t-period">2019 – Present</span><span class="t-tag">ETH Didactic Fellow</span></div><h4>Didactic Innovation Program</h4><p>Part of the ETH Zurich Didactic Fellows program, developing new teaching methods and approaches for science and engineering education.</p></div>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para1">Prof. Dr. Maksym Yarema is an Adjunct Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;">At ETH Zurich, Maksym serves as a Lecturer and ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
         </div>
       </div>
       <div class="fade-in">
@@ -1232,24 +1214,6 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications" style="background:var(--bg);padding:5rem 0;">
-  <div class="section-inner">
-    <div class="fade-in" style="margin-bottom:3rem;">
-      <div class="section-eyebrow">Publications</div>
-      <h2 class="section-title">Research <em>Publications</em></h2>
-      <p style="color:var(--muted);font-size:0.92rem;line-height:1.85;max-width:600px;">Peer-reviewed publications in leading scientific journals on nanomaterials, colloidal chemistry, and emerging memory devices.</p>
-    </div>
-    <div id="cms-publications-list" class="pub-list fade-in">
-      <!-- CMS: populated from _data/publications-index.json -->
-      <p style="color:var(--muted);font-size:0.9rem;">Loading publications…</p>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="https://scholar.google.com/citations?user=Og5RdLYAAAAJ" target="_blank" rel="noopener" class="btn btn-navy">View all on Google Scholar →</a>
-    </div>
-  </div>
-</section>
-
 <!-- COMM BANNER -->
 <div class="comm-banner">
   <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.12;" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -1278,8 +1242,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       <p class="comm-lead">Making complex ideas accessible and exciting — through public talks, podcasts, storytelling, consulting, and mentoring.</p>
     </div>
 
-    <!-- CMS: recent media appearances -->
-    <div id="cms-media-list" class="media-list fade-in" style="margin-bottom:2.5rem;"></div>
+    <div id="cms-media-list" class="media-list fade-in" style="margin-bottom:2rem;"></div>
 
     <div class="comm-cards-grid fade-in">
 
@@ -1862,7 +1825,6 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
         <a href="#international">International</a>
-        <a href="#publications">Publications</a>
         <a href="#communication">Communication</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1981,8 +1943,7 @@ try {
     about:         '_data/about.json',
     research:      '_data/research.json',
     teaching:      '_data/teaching.json',
-    international: '_data/international.json',
-    media:         '_data/media.json'
+    international: '_data/international.json'
   };
 
   // Helper: resolve "settings.stats[0].num" against a data object
@@ -2062,78 +2023,54 @@ try {
     });
 
     // ── 3. Teaching timeline ──
-    const timelineEl = document.getElementById('cms-teaching-timeline');
-    if (timelineEl && Array.isArray(data.teaching && data.teaching.timeline) && data.teaching.timeline.length) {
-      timelineEl.innerHTML = data.teaching.timeline.map(item => {
-        const tags = (item.tags || []).map(t => `<span class="t-tag">${esc(t)}</span>`).join('');
+    const tlEl = document.getElementById('cms-teaching-timeline');
+    if (tlEl && data.teaching && Array.isArray(data.teaching.timeline) && data.teaching.timeline.length) {
+      tlEl.innerHTML = data.teaching.timeline.map(item => {
+        const tags = (item.tags||[]).map(t=>`<span class="t-tag">${esc(t)}</span>`).join('');
         return `<div class="t-item"><div class="t-meta"><span class="t-period">${esc(item.period||'')}</span>${tags}</div><h4>${esc(item.title||'')}</h4><p>${esc(item.desc||'')}</p></div>`;
       }).join('');
     }
 
-    // ── 4. Teaching featured course ──
-    const course = data.teaching && data.teaching.course;
-    if (course) {
-      const titleEl = document.getElementById('cms-course-title');
-      const descEl  = document.getElementById('cms-course-desc');
-      const targEl  = document.getElementById('cms-course-target');
-      const listEl  = document.getElementById('cms-course-topics');
-      if (titleEl && course.title) titleEl.textContent = course.title;
-      if (descEl  && course.desc)  descEl.textContent  = course.desc;
-      if (targEl  && course.target) targEl.textContent = course.target;
-      if (listEl  && Array.isArray(course.topics) && course.topics.length) {
-        listEl.innerHTML = course.topics.map(t => `<li>${esc(t)}</li>`).join('');
-      }
+    // ── 4. Teaching course card ──
+    const c = data.teaching && data.teaching.course;
+    if (c) {
+      const t = document.getElementById('cms-course-title');
+      const d = document.getElementById('cms-course-desc');
+      const g = document.getElementById('cms-course-target');
+      const l = document.getElementById('cms-course-topics');
+      if (t && c.title)  t.textContent = c.title;
+      if (d && c.desc)   d.textContent = c.desc;
+      if (g && c.target) g.textContent = c.target;
+      if (l && Array.isArray(c.topics) && c.topics.length)
+        l.innerHTML = c.topics.map(t=>`<li>${esc(t)}</li>`).join('');
     }
 
     // ── 5. International intro ──
-    const intlIntroEl = document.getElementById('cms-intl-intro');
-    if (intlIntroEl && data.international && data.international.intro) {
-      intlIntroEl.textContent = data.international.intro;
-    }
+    const iiEl = document.getElementById('cms-intl-intro');
+    if (iiEl && data.international && data.international.intro)
+      iiEl.textContent = data.international.intro;
 
     // ── 6. International projects ──
-    const intlEl = document.getElementById('cms-intl-projects');
-    if (intlEl && Array.isArray(data.international && data.international.projects) && data.international.projects.length) {
-      intlEl.innerHTML = data.international.projects.map(p => {
-        const outcomes = (p.outcomes || []).map(o => `<span class="intl-outcome">${esc(o)}</span>`).join('');
+    const ipEl = document.getElementById('cms-intl-projects');
+    if (ipEl && data.international && Array.isArray(data.international.projects) && data.international.projects.length) {
+      ipEl.innerHTML = data.international.projects.map(p => {
+        const outcomes = (p.outcomes||[]).map(o=>`<span class="intl-outcome">${esc(o)}</span>`).join('');
         return `<div class="intl-card"><div class="intl-period">${esc(p.period||'')}</div><div class="intl-grant">${esc(p.grant||'')}</div><h3>${esc(p.title||'')}</h3><p>${esc(p.desc||'')}</p><div class="intl-outcomes">${outcomes}</div></div>`;
       }).join('');
     }
 
-    // ── 7. Media (Communication) items ──
-    const mediaEl = document.getElementById('cms-media-list');
-    if (mediaEl && Array.isArray(data.media) && data.media.length) {
-      const sorted = [...data.media].sort((a,b) => (b.year||0)-(a.year||0));
-      mediaEl.innerHTML = sorted.map(m => {
-        const link = m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener" class="media-item-link">View →</a>` : '';
-        return `<div class="media-item"><div class="media-item-meta"><span class="media-item-type">${esc(m.type||'')}</span><span class="media-item-year">${esc(String(m.year||''))}</span></div><div class="media-item-platform">${esc(m.platform||'')}</div><h4 class="media-item-title">${esc(m.title||'')}</h4>${m.desc ? `<p class="media-item-desc">${esc(m.desc)}</p>` : ''}${link}</div>`;
-      }).join('');
-    }
-
-    // ── 8. Publications list ──
-    // publications are in individual files: _data/publications/*.json
-    // We fetch the list index generated by the CMS (folder collection)
-    // Since Decap CMS folder collections don't auto-generate an index,
-    // we load publications via the Netlify CMS collection API approach:
-    // fetch the individual files listed via a manifest, or fall back to
-    // a pre-built _data/publications.json if the dev generates it.
-    // For now we attempt _data/publications-index.json (to be generated at build time).
-    fetch('_data/publications-index.json', { cache: 'no-cache' })
-      .then(r => r.ok ? r.json() : null).catch(() => null)
-      .then(pubs => {
-        if (!Array.isArray(pubs) || !pubs.length) return;
-        const pubsEl = document.getElementById('cms-publications-list');
-        if (!pubsEl) return;
-        const sorted = [...pubs].sort((a,b) => (b.year||0)-(a.year||0));
-        const featured = sorted.filter(p => p.featured);
-        const rest     = sorted.filter(p => !p.featured);
-        const renderPub = p => `<div class="pub-item${p.featured?' pub-featured':''}">
-          <div class="pub-meta"><span class="pub-year">${esc(String(p.year||''))}</span><span class="pub-journal">${esc(p.journal||'')}</span>${p.featured?'<span class="pub-badge">Featured</span>':''}</div>
-          <div class="pub-title">${esc(p.title||'')}</div>
-          <div class="pub-authors">${esc(p.authors||'')}</div>
-          ${p.doi ? `<a href="${esc(p.doi)}" target="_blank" rel="noopener" class="pub-doi">DOI / Link →</a>` : ''}
-        </div>`;
-        pubsEl.innerHTML = [...featured, ...rest].map(renderPub).join('');
+    // ── 7. Media (Communication) ──
+    fetch('_data/media-index.json', {cache:'no-cache'})
+      .then(r=>r.ok?r.json():null).catch(()=>null)
+      .then(media => {
+        if (!Array.isArray(media) || !media.length) return;
+        const el = document.getElementById('cms-media-list');
+        if (!el) return;
+        const sorted = [...media].sort((a,b)=>(b.year||0)-(a.year||0));
+        el.innerHTML = sorted.map(m => {
+          const link = m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener" class="media-item-link">View →</a>` : '';
+          return `<div class="media-item"><div class="media-item-meta"><span class="media-item-type">${esc(m.type||'')}</span><span class="media-item-year">${esc(String(m.year||''))}</span></div><div class="media-item-platform">${esc(m.platform||'')}</div><h4 class="media-item-title">${esc(m.title||'')}</h4>${m.desc?`<p class="media-item-desc">${esc(m.desc)}</p>`:''}${link}</div>`;
+        }).join('');
       });
 
     console.info('[CMS] Data applied:', Object.keys(data));
