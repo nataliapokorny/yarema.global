@@ -1,24 +1,9 @@
 {
-  "timeline": [
-    {
-      "period": "2019 – Present",
-      "title": "Emerging Memory Technologies",
-      "desc": "Course on next-generation electronic memory devices and colloidal nanomaterials. Research-integrated curriculum bridging cutting-edge lab work with academic teaching.",
-      "tags": ["ETH Zurich", "Lecturer"]
-    },
-    {
-      "period": "2019 – Present",
-      "title": "Chemistry of Devices and Technologies",
-      "desc": "Undergraduate course on chemistry fundamentals in the context of electronic devices and modern technology applications.",
-      "tags": ["ETH Zurich", "Lecturer"]
-    },
-    {
-      "period": "2019 – Present",
-      "title": "Didactic Innovation Program",
-      "desc": "Part of the ETH Zurich Didactic Fellows program, developing new teaching methods and approaches for science and engineering education.",
-      "tags": ["ETH Didactic Fellow"]
-    }
-  ],
+  "paragraphs": {
+    "para1": "Prof. Dr. Maksym Yarema is an Adjunct Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.",
+    "para2": "His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.",
+    "para3": "At ETH Zurich, Maksym serves as a Lecturer and ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact."
+  },
   "course": {
     "title": "Accessible Speaking for Scientists",
     "desc": "Learn to communicate scientific ideas clearly, confidently, and effectively — without losing depth or rigor.",
