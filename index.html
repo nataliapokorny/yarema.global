@@ -901,14 +901,6 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   .dark-split{padding:2.5rem 1rem;}
 }
 
-/* ── Teaching timeline (CMS) ── */
-.t-item{padding:1.1rem 0;border-bottom:1px solid var(--border);}
-.t-item:last-child{border-bottom:none;}
-.t-meta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.4rem;}
-.t-period{font-family:var(--font-mono);font-size:.7rem;color:var(--amber);letter-spacing:.08em;}
-.t-tag{font-size:.7rem;background:rgba(74,111,165,.12);color:var(--steel);border-radius:20px;padding:.15rem .6rem;}
-.t-item h4{font-size:.95rem;color:var(--navy);margin-bottom:.3rem;font-weight:600;}
-.t-item p{font-size:.85rem;color:var(--muted);line-height:1.7;margin:0;}
 /* ── Media list (CMS) ── */
 .media-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
 .media-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.2rem;transition:box-shadow .2s;}
@@ -1075,10 +1067,10 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       <div class="teaching-left fade-in">
         <div class="section-eyebrow">Teaching</div>
         <h2 class="section-title">Education &amp;<br><em>Innovation</em></h2>
-        <div class="teaching-projects" id="cms-teaching-timeline">
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para1">Prof. Dr. Maksym Yarema is an Adjunct Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" data-cms="about.para2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;">At ETH Zurich, Maksym serves as a Lecturer and ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
+        <div class="teaching-projects" id="cms-teaching-paras">
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p1">Prof. Dr. Maksym Yarema is an Adjunct Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;" id="cms-teaching-p3">At ETH Zurich, Maksym serves as a Lecturer and ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
         </div>
       </div>
       <div class="fade-in">
@@ -2022,13 +2014,15 @@ try {
       }
     });
 
-    // ── 3. Teaching timeline ──
-    const tlEl = document.getElementById('cms-teaching-timeline');
-    if (tlEl && data.teaching && Array.isArray(data.teaching.timeline) && data.teaching.timeline.length) {
-      tlEl.innerHTML = data.teaching.timeline.map(item => {
-        const tags = (item.tags||[]).map(t=>`<span class="t-tag">${esc(t)}</span>`).join('');
-        return `<div class="t-item"><div class="t-meta"><span class="t-period">${esc(item.period||'')}</span>${tags}</div><h4>${esc(item.title||'')}</h4><p>${esc(item.desc||'')}</p></div>`;
-      }).join('');
+    // ── 3. Teaching paragraphs ──
+    const tp = data.teaching && data.teaching.paragraphs;
+    if (tp) {
+      const p1 = document.getElementById('cms-teaching-p1');
+      const p2 = document.getElementById('cms-teaching-p2');
+      const p3 = document.getElementById('cms-teaching-p3');
+      if (p1 && tp.para1) p1.textContent = tp.para1;
+      if (p2 && tp.para2) p2.textContent = tp.para2;
+      if (p3 && tp.para3) p3.textContent = tp.para3;
     }
 
     // ── 4. Teaching course card ──
@@ -2042,7 +2036,7 @@ try {
       if (d && c.desc)   d.textContent = c.desc;
       if (g && c.target) g.textContent = c.target;
       if (l && Array.isArray(c.topics) && c.topics.length)
-        l.innerHTML = c.topics.map(t=>`<li>${esc(t)}</li>`).join('');
+        l.innerHTML = c.topics.map(t => `<li>${esc(t)}</li>`).join('');
     }
 
     // ── 5. International intro ──
@@ -2054,19 +2048,19 @@ try {
     const ipEl = document.getElementById('cms-intl-projects');
     if (ipEl && data.international && Array.isArray(data.international.projects) && data.international.projects.length) {
       ipEl.innerHTML = data.international.projects.map(p => {
-        const outcomes = (p.outcomes||[]).map(o=>`<span class="intl-outcome">${esc(o)}</span>`).join('');
+        const outcomes = (p.outcomes||[]).map(o => `<span class="intl-outcome">${esc(o)}</span>`).join('');
         return `<div class="intl-card"><div class="intl-period">${esc(p.period||'')}</div><div class="intl-grant">${esc(p.grant||'')}</div><h3>${esc(p.title||'')}</h3><p>${esc(p.desc||'')}</p><div class="intl-outcomes">${outcomes}</div></div>`;
       }).join('');
     }
 
-    // ── 7. Media (Communication) ──
+    // ── 7. Media ──
     fetch('_data/media-index.json', {cache:'no-cache'})
-      .then(r=>r.ok?r.json():null).catch(()=>null)
+      .then(r => r.ok ? r.json() : null).catch(() => null)
       .then(media => {
         if (!Array.isArray(media) || !media.length) return;
         const el = document.getElementById('cms-media-list');
         if (!el) return;
-        const sorted = [...media].sort((a,b)=>(b.year||0)-(a.year||0));
+        const sorted = [...media].sort((a,b) => (b.year||0)-(a.year||0));
         el.innerHTML = sorted.map(m => {
           const link = m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener" class="media-item-link">View →</a>` : '';
           return `<div class="media-item"><div class="media-item-meta"><span class="media-item-type">${esc(m.type||'')}</span><span class="media-item-year">${esc(String(m.year||''))}</span></div><div class="media-item-platform">${esc(m.platform||'')}</div><h4 class="media-item-title">${esc(m.title||'')}</h4>${m.desc?`<p class="media-item-desc">${esc(m.desc)}</p>`:''}${link}</div>`;
