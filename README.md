@@ -2,7 +2,7 @@
 
 Personal academic website for Maksym Yarema — researcher, educator, and science communicator at ETH Zurich.
 
-**Live site:** https://yaremaglobal.netlify.app
+**Live site:** https://yaremaglobal.netlify.app 
 
 ---
 
