@@ -914,6 +914,8 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
 .media-item-link{font-size:.8rem;color:var(--steel);font-weight:500;text-decoration:none;}
 .media-item-link:hover{color:var(--amber);}
 </style>
+  <!-- Netlify Identity Widget — обробляє посилання-запрошення з листа -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -2192,5 +2194,17 @@ function doSubmit(e) { return handleSubmit(e); }
     <button onclick="closeThanks()" style="background:#0C0C0C;color:#fff;border:none;border-radius:8px;padding:0.85rem 2.2rem;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#E8A020'" onmouseout="this.style.background='#0C0C0C'">Close ✕</button>
   </div>
 </div>
+<script>
+  // Netlify Identity — обробка запрошень / відновлення пароля / логіну
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
