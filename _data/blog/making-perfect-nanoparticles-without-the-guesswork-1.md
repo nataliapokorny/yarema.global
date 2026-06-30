@@ -4,6 +4,7 @@ date: 2026-06-30
 tag: Research
 excerpt: We used real-time X-ray imaging to watch gallium nanoparticles form,
   replacing trial-and-error with a precise, repeatable recipe.
+image: /static/uploads/знімок-екрана-2026-06-30-о-18.07.25.png
 published: true
 ---
 Scientists often make nanoparticles – tiny pieces of material thousands of times smaller than a human hair. Making them all the exact same size is important for technology, but it is very difficult. Usually, chemists rely on a tedious trial-and-error process to find the right recipe.
