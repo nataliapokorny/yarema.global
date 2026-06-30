@@ -466,6 +466,43 @@ nav.scrolled{box-shadow:0 4px 24px rgba(28,43,74,0.1);}
 }
 .comm-card-btn{margin-top:1.1rem;font-size:0.7rem;padding:0.72rem 1.2rem;}
 .comm-cta{text-align:center;margin-top:0.5rem;}
+
+/* ── BLOG ── */
+#blog{background:var(--bg);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:2.5rem;}
+.blog-card{
+  background:var(--white);border-radius:var(--radius-lg);
+  border:1px solid var(--border);overflow:hidden;
+  transition:transform 0.28s,box-shadow 0.28s;
+  display:flex;flex-direction:column;
+}
+.blog-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.blog-card-vis{
+  height:170px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;flex-shrink:0;
+  background:linear-gradient(135deg,#0e1a2e 0%,#1a2e4a 100%);
+}
+.blog-card-vis img{width:100%;height:100%;object-fit:cover;}
+.blog-card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;}
+.blog-card-meta{
+  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;
+  display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;
+}
+.blog-card-meta span:not(:last-child)::after{content:'·';margin-left:0.6rem;color:var(--border);}
+.blog-card-body h4{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.45rem;letter-spacing:-0.01em;line-height:1.35;}
+.blog-card-body p{font-size:0.83rem;color:var(--muted);line-height:1.72;flex:1;}
+.blog-card-link{
+  margin-top:1.1rem;font-family:var(--font-mono);font-size:0.7rem;
+  letter-spacing:0.04em;color:var(--navy);text-decoration:none;
+  display:inline-flex;align-items:center;gap:0.4rem;
+}
+.blog-card-link:hover{color:var(--amber);}
+.blog-empty{
+  text-align:center;padding:3rem 1.5rem;color:var(--muted);
+  font-size:0.9rem;border:1px dashed var(--border);border-radius:var(--radius-lg);
+}
+.blog-cta{text-align:center;margin-top:0.5rem;}
 /* device diagram */
 .device-diagram-wrap{width:100%;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.06);}
 .device-label-top{font-family:var(--font-mono);font-size:0.6rem;color:rgba(232,160,32,0.5);letter-spacing:0.2em;text-transform:uppercase;text-align:center;margin-bottom:1rem;}
@@ -764,6 +801,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   /* Communication */
   .comm-top{grid-template-columns:1fr;gap:1.5rem;}
   .comm-cards-grid{grid-template-columns:1fr 1fr;gap:1rem;}
+  .blog-grid{grid-template-columns:1fr 1fr;gap:1rem;}
 
   /* Dark split */
   .vis-split{grid-template-columns:1fr;height:auto;}
@@ -850,6 +888,9 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   .comm-cards-grid{grid-template-columns:1fr;gap:0.8rem;}
   .comm-card{border-radius:8px;}
   .comm-card-vis{height:130px;}
+  .blog-grid{grid-template-columns:1fr;gap:0.8rem;}
+  .blog-card{border-radius:8px;}
+  .blog-card-vis{height:130px;}
 
   /* Dark split */
   .vis-split,.dark-split-inner{grid-template-columns:1fr;}
@@ -934,6 +975,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     <li><a href="#teaching">Teaching</a></li>
     <li><a href="#international">International</a></li>
     <li><a href="#communication">Communication</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -944,6 +986,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   <a href="#teaching" onclick="closeMobileMenu()">Teaching</a>
   <a href="#international" onclick="closeMobileMenu()">International</a>
   <a href="#communication" onclick="closeMobileMenu()">Communication</a>
+  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -975,12 +1018,12 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     </div>
     <div class="hero-stats-panel">
       <div class="hero-stat-card">
-        <span class="hero-stat-num" data-cms="settings.stats[0].num">80+</span>
+        <span class="hero-stat-num" data-cms="settings.stats[0].num">95+</span>
         <p class="hero-stat-desc" data-cms="settings.stats[0].desc">Publications in peer-reviewed journals worldwide.</p>
       </div>
       <div class="hero-stat-card">
-        <span class="hero-stat-num" data-cms="settings.stats[1].num">50+</span>
-        <p class="hero-stat-desc" data-cms="settings.stats[1].desc">International conference talks across Europe and beyond.</p>
+        <span class="hero-stat-num" data-cms="settings.stats[1].num">60+</span>
+        <p class="hero-stat-desc" data-cms="settings.stats[1].desc">International conference talks across the world.</p>
       </div>
     </div>
   </div>
@@ -1006,17 +1049,16 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       </div>
       <div class="fade-in">
         <div class="research-cards" data-cms-container="research.areas">
-          <div class="research-card"><span class="research-num">01</span><div><h3>Nanomaterials &amp; Nanoscience</h3><p>Design, synthesis, and characterization of nanoscale materials with unique physical and chemical properties.</p><div class="tags"><span class="tag">Colloidal Nanocrystals</span><span class="tag">Semiconductor Nanomaterials</span><span class="tag">Nanoscale Synthesis</span><span class="tag">Structure–Property Relations</span></div></div></div>
+          <div class="research-card"><span class="research-num">01</span><div><h3>Nanomaterials &amp; Nanoscience</h3><p>Design, synthesis, and characterization of nanoscale materials with unique physical and chemical properties.</p><div class="tags"><span class="tag">Colloidal Nanocrystals</span><span class="tag">Semiconductor Nanomaterials</span><span class="tag">Nanoscale Synthesis</span><span class="tag">Structure–Property Relationships</span></div></div></div>
           <div class="research-card"><span class="research-num">02</span><div><h3>Electronic Materials &amp; Memory Devices</h3><p>Advanced materials for electronic components and next-generation memory technologies.</p><div class="tags"><span class="tag">Emerging Memory Devices</span><span class="tag">Electronic Materials</span><span class="tag">Charge Transport</span><span class="tag">Nanoscale Systems</span></div></div></div>
           <div class="research-card"><span class="research-num">03</span><div><h3>Sustainable Electronics &amp; Energy</h3><p>Materials for sustainable and energy-efficient electronic technologies.</p><div class="tags"><span class="tag">Energy Storage Materials</span><span class="tag">Eco-friendly Electronics</span><span class="tag">Nanomaterials for Energy</span><span class="tag">Sustainable Systems</span></div></div></div>
-          <div class="research-card"><span class="research-num">04</span><div><h3>Interdisciplinary Materials Science</h3><p>Chemistry, physics, and materials science combined to develop advanced functional materials.</p><div class="tags"><span class="tag">Interdisciplinary Research</span><span class="tag">Nanostructured Materials</span><span class="tag">Functional Materials</span><span class="tag">Advanced Materials Design</span></div></div></div>
+          <div class="research-card"><span class="research-num">04</span><div><h3>Interdisciplinary Materials Science</h3><p>Chemistry, physics, and materials science combined to develop advanced functional materials.</p><div class="tags"><span class="tag">Interdisciplinary Research</span><span class="tag">Nanostructured Materials</span><span class="tag">Functional Materials</span></div></div></div>
         </div>
         <div class="grants-bar" data-cms-container="research.grants">
           <span class="grants-label">Key Grants</span>
           <span class="grant-item">ERC Starting Grant</span>
           <span class="grant-item">SNSF Ambizione Fellowship</span>
-          <span class="grant-item">SNSF R'Equip Grant</span>
-          <span class="grant-item">Marie Curie Fellowship</span>
+          <span class="grant-item">Marie Curie Postdoctoral Fellowship</span>
         </div>
       </div>
     </div>
@@ -1057,7 +1099,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     </svg>
     <div style="position:relative;z-index:1;text-align:center;padding:2rem;">
       <div style="font-family:var(--font-mono);font-size:0.58rem;color:var(--amber);letter-spacing:0.22em;margin-bottom:0.8rem;text-transform:uppercase;">Crystal Lattice · Nanostructure</div>
-      <div style="font-family:var(--font-display);font-size:1.9rem;font-weight:300;color:var(--white);line-height:1.25;">Atomic-scale<br>design &amp; control</div>
+      <div style="font-family:var(--font-display);font-size:1.9rem;font-weight:300;color:var(--white);line-height:1.25;">Atomic-scale<br>design &amp; discovery</div>
     </div>
   </div>
 </div>
@@ -1070,9 +1112,9 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="section-eyebrow">Teaching</div>
         <h2 class="section-title">Education &amp;<br><em>Innovation</em></h2>
         <div class="teaching-projects" id="cms-teaching-paras">
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p1">Prof. Dr. Maksym Yarema is an Adjunct Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering (with honors) from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
-          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;" id="cms-teaching-p3">At ETH Zurich, Maksym serves as a Lecturer and ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p1">Prof. Dr. Maksym Yarema is a Professor at the Institute for Electronics, ETH Zurich, and Head of the Chemistry and Materials Design Group at the Department of Information Technology and Electrical Engineering. He holds a PhD in Chemical Engineering from Johannes Kepler University Linz and completed postdoctoral research at EMPA and ETH Zurich.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;" id="cms-teaching-p2">His research focuses on colloidal nanomaterials for emerging memory devices, sustainable electronics, and energy technologies. Recipient of an ERC Starting Grant, SNSF Ambizione Fellowship, and Marie Curie Postdoctoral Fellowship — with 80+ peer-reviewed publications and 17+ years of research experience.</p>
+          <p style="font-size:0.92rem;color:var(--muted);line-height:1.85;" id="cms-teaching-p3">At ETH Zurich, Maksym serves as an ETH Didactic Fellow, teaching Emerging Memory Technologies and Chemistry of Devices and Technologies. He is passionate about science communication and helping researchers present their work with clarity and lasting impact.</p>
         </div>
       </div>
       <div class="fade-in">
@@ -1103,14 +1145,17 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
             <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8A020" stop-opacity="0.95"/><stop offset="100%" stop-color="#c47d10" stop-opacity="0.6"/></linearGradient>
             <linearGradient id="lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1C2B4A" stop-opacity="1"/><stop offset="100%" stop-color="#0a1220" stop-opacity="0.85"/></linearGradient>
             <filter id="glow2"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#4A6FA5" opacity="0.55"/>
+            </marker>
           </defs>
           <!-- Layer labels left side -->
           <text x="8" y="47" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">TOP ELECTRODE</text>
           <text x="8" y="107" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(232,160,32,0.85)" letter-spacing="1.5">NANOCRYSTAL LAYER</text>
-          <text x="8" y="167" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">DIELECTRIC</text>
-          <text x="8" y="227" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">SEMICONDUCTOR</text>
+          <text x="8" y="167" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">TRANSPORT LAYER</text>
+          <text x="8" y="227" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">BOTTOM ELECTRODE</text>
           <text x="8" y="287" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">SUBSTRATE</text>
-          <!-- Layers -->
+          <!-- Layers (3 and 4 swapped back) -->
           <rect x="148" y="30" width="360" height="32" rx="3" fill="url(#lg1)"/>
           <rect x="148" y="90" width="360" height="32" rx="3" fill="url(#lg2)"/>
           <rect x="148" y="150" width="360" height="32" rx="3" fill="url(#lg1)" opacity="0.55"/>
@@ -1129,24 +1174,20 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
             <circle cx="468" cy="107" r="5" fill="#E8A020"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite" begin="0.9s"/></circle>
             <circle cx="499" cy="103" r="6" fill="#ffb830"><animate attributeName="opacity" values="0.85;0.3;0.85" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
           </g>
-          <!-- Charge flow arrows animated -->
-          <line x1="510" y1="46" x2="510" y2="214" stroke="#4A6FA5" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.55">
+          <!-- Charge flow arrow - curved path -->
+          <path d="M 510 46 C 530 100, 530 160, 510 214" stroke="#4A6FA5" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.55">
             <animate attributeName="stroke-dashoffset" values="0;-30" dur="1.4s" repeatCount="indefinite"/>
-          </line>
+          </path>
           <polygon points="510,222 506,212 514,212" fill="#4A6FA5" opacity="0.55"/>
-          <!-- Small electrode contacts -->
-          <rect x="195" y="24" width="30" height="8" rx="1" fill="#4A6FA5" opacity="0.6"/>
-          <rect x="340" y="24" width="30" height="8" rx="1" fill="#4A6FA5" opacity="0.6"/>
-          <rect x="460" y="24" width="30" height="8" rx="1" fill="#4A6FA5" opacity="0.6"/>
           <!-- Caption -->
-          <text x="328" y="328" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(232,160,32,0.45)" letter-spacing="2.5">COLLOIDAL NANOCRYSTAL MEMORY DEVICE</text>
+          <text x="328" y="328" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(232,160,32,0.45)" letter-spacing="2.5">COLLOIDAL NANOCRYSTAL NANOSCALE DEVICE</text>
         </svg>
       </div>
     </div>
     <div class="ds-text">
-      <div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--amber);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.2rem;">Memory Device Architecture</div>
+      <div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--amber);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:1.2rem;">Nanoscale Device Architecture</div>
       <h2>International <em>Collaboration</em><br>in Nanoscience</h2>
-      <p>Building bridges across institutions and disciplines — actively engaging in international partnerships with universities and research groups across Europe and beyond.</p>
+      <p>Building bridges across institutions and disciplines — actively engaging in international partnerships with universities and research groups across the world.</p>
       <a href="#international" class="btn btn-outline">View Projects →</a>
     </div>
   </div>
@@ -1158,14 +1199,14 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     <div class="intl-header fade-in">
       <div class="section-eyebrow" style="justify-content:center;">International</div>
       <h2 class="section-title">Global <em>Collaboration</em></h2>
-      <p style="margin-top:1rem;color:var(--muted);font-size:0.92rem;line-height:1.85;" id="cms-intl-intro">Building bridges across institutions and disciplines across Europe and beyond.</p>
+      <p style="margin-top:1rem;color:var(--muted);font-size:0.92rem;line-height:1.85;" id="cms-intl-intro">Building bridges across institutions and disciplines across the world and beyond.</p>
     </div>
     <div class="intl-layout fade-in" id="cms-intl-projects">
-      <div class="intl-card"><div class="intl-period">2024 – 2026</div><div class="intl-grant">International Project</div><h3>ETH–KSE Tandem Teaching Program</h3><p>Developing international collaboration in engineering education through joint teaching activities and knowledge exchange between ETH Zurich and Kyiv School of Economics.</p><div class="intl-outcomes"><span class="intl-outcome">International collaboration</span><span class="intl-outcome">Innovative methods</span><span class="intl-outcome">Joint initiatives</span></div></div>
+      <div class="intl-card"><div class="intl-period">2024 – Present</div><div class="intl-grant">International Project</div><h3>ETH–KSE Tandem Teaching Program</h3><p>Developing international collaboration in engineering education through joint teaching activities and knowledge exchange between ETH Zurich and Kyiv School of Economics.</p><div class="intl-outcomes"><span class="intl-outcome">International collaboration</span><span class="intl-outcome">Innovative methods</span><span class="intl-outcome">Joint initiatives</span></div></div>
       <div class="intl-card"><div class="intl-period">2024 – Present</div><div class="intl-grant">Educational Innovation</div><h3>Teaching Innovation — Emerging Memory Technologies</h3><p>Integrating cutting-edge research directly into the Emerging Memory Technologies course curriculum, bridging research and academic teaching.</p><div class="intl-outcomes"><span class="intl-outcome">Research-integrated curriculum</span><span class="intl-outcome">Innovative pedagogy</span><span class="intl-outcome">Interdisciplinary approach</span></div></div>
       <div class="intl-card"><div class="intl-period">2019 – 2025</div><div class="intl-grant">ERC Starting Grant</div><h3>Colloidal Nanomaterials for Emerging Memory Devices</h3><p>Development and investigation of colloidal nanomaterials for next-generation electronic memory and data storage.</p><div class="intl-outcomes"><span class="intl-outcome">New nanomaterials developed</span><span class="intl-outcome">Electronic properties investigated</span><span class="intl-outcome">Publications in leading journals</span></div></div>
       <div class="intl-card"><div class="intl-period">2016 – 2019</div><div class="intl-grant">SNSF Ambizione Fellowship</div><h3>Nanomaterials for Memory Technologies</h3><p>Novel nanomaterials for advanced electronic memory technologies combining chemistry, physics, and materials science.</p><div class="intl-outcomes"><span class="intl-outcome">New electronic materials</span><span class="intl-outcome">Interdisciplinary nanoscience</span><span class="intl-outcome">International publications</span></div></div>
-      <div class="intl-card"><div class="intl-period">2020</div><div class="intl-grant">SNSF R'Equip Grant</div><h3>Advanced Equipment for Nanomaterials Research</h3><p>Acquisition of advanced scientific equipment to expand nanomaterials research laboratory capabilities.</p><div class="intl-outcomes"><span class="intl-outcome">Improved research infrastructure</span><span class="intl-outcome">Expanded experimental capacity</span></div></div>
+      <div class="intl-card"><div class="intl-period">2016 – present</div><div class="intl-grant">Research Frontier</div><h3>Nanoscale Metals, Alloys and Intermetallics</h3><p>Vast family of colloidal nanomaterials to unlock unique applications in energy, electronics, and biotechnology.</p><div class="intl-outcomes"><span class="intl-outcome">Universal synthetic approach</span><span class="intl-outcome">Plasmonic and catalytic applications</span><span class="intl-outcome">Publications in leading journals</span></div></div>
     </div>
     <div class="collab-strip fade-in">
       <div class="collab-item">
@@ -1233,7 +1274,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="section-eyebrow">Communication</div>
         <h2 class="section-title">Science<br><em>Communication</em></h2>
       </div>
-      <p class="comm-lead">Making complex ideas accessible and exciting — through public talks, podcasts, storytelling, consulting, and mentoring.</p>
+      <p class="comm-lead">Making complex ideas accessible and exciting — through public lectures, conference presentations, podcasts, consulting, and mentoring.</p>
     </div>
 
     <div id="cms-media-list" class="media-list fade-in" style="margin-bottom:2rem;"></div>
@@ -1274,7 +1315,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
           <div class="comm-card-tag">Public Engagement</div>
           <h4>Podcasts &amp; Interviews</h4>
           <p>Participation in science communication podcasts including "Simply About Science" — nanoscience, academic careers, and the human side of research.</p>
-          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Learn the Terms</a>
+          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Let's Connect</a>
         </div>
       </div>
 
@@ -1314,7 +1355,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
           <div class="comm-card-tag">Public Engagement</div>
           <h4>Public Lectures</h4>
           <p>Regular talks bringing nanoscience and materials research to students, professionals, and the general public.</p>
-          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Learn the Terms</a>
+          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Let's Connect</a>
         </div>
       </div>
 
@@ -1344,7 +1385,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
             <line x1="70" y1="68" x2="80" y2="100" stroke="#E8A020" stroke-width="0.8" stroke-dasharray="3,4" opacity="0.35"><animate attributeName="opacity" values="0.35;0.1;0.35" dur="3s" repeatCount="indefinite" begin="0.8s"/></line>
             <!-- Badge 50+ -->
             <circle cx="156" cy="42" r="22" fill="#E8A020"/>
-            <text x="156" y="38" text-anchor="middle" font-family="DM Mono,monospace" font-size="14" fill="white" font-weight="bold">50+</text>
+            <text x="156" y="38" text-anchor="middle" font-family="DM Mono,monospace" font-size="14" fill="white" font-weight="bold">60+</text>
             <text x="156" y="54" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="white" letter-spacing="0.5">TALKS</text>
             <text x="100" y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="rgba(232,160,32,0.5)" letter-spacing="2">INTERNATIONAL</text>
           </svg>
@@ -1352,8 +1393,8 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="comm-card-body">
           <div class="comm-card-tag">Global Reach</div>
           <h4>Conference Presentations</h4>
-          <p>50+ international conference talks in leading venues across Europe and beyond, sharing research with the global scientific community.</p>
-          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Learn the Terms</a>
+          <p>60+ international conference talks in leading venues across Europe and beyond, sharing research with the global scientific community.</p>
+          <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Let's Connect</a>
         </div>
       </div>
 
@@ -1387,6 +1428,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
           <div class="comm-card-tag">Outreach</div>
           <h4>Science Writing</h4>
           <p>Accessible science writing that translates cutting-edge research into stories people can understand and connect with.</p>
+          <div class="card-formats">Storytelling · Concept</div>
           <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Learn the Terms</a>
         </div>
       </div>
@@ -1424,7 +1466,7 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
         <div class="comm-card-body">
           <div class="comm-card-tag">Consulting</div>
           <h4>Scientific Consulting</h4>
-          <p>Scientific consulting in nanomaterials and electronic materials, supporting research and technology development projects.</p>
+          <p>Scientific consulting in nanomaterials and applications, supporting research and technology development projects.</p>
           <div class="card-formats">Short-term · Long-term · Expert evaluation · Industry–academia</div>
           <a href="#contact" class="btn btn-amber btn-full comm-card-btn">Find Out the Price</a>
         </div>
@@ -1485,13 +1527,11 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
     <h2 class="nano-panorama-title">Exploring matter<br>at the <em>nanoscale</em></h2>
     <p class="nano-panorama-sub">Where individual atoms and molecules reveal extraordinary properties — and new technologies begin.</p>
     <div class="nano-stats-row">
-      <div class="nano-stat"><span class="nano-stat-n">80+</span><span class="nano-stat-l">Publications</span></div>
+      <div class="nano-stat"><span class="nano-stat-n">18+</span><span class="nano-stat-l">Publications</span></div>
       <div class="nano-stat-divider"></div>
-      <div class="nano-stat"><span class="nano-stat-n">50+</span><span class="nano-stat-l">Conference Talks</span></div>
+      <div class="nano-stat"><span class="nano-stat-n">90+</span><span class="nano-stat-l">Conference Talks</span></div>
       <div class="nano-stat-divider"></div>
-      <div class="nano-stat"><span class="nano-stat-n">4</span><span class="nano-stat-l">Major Grants</span></div>
-      <div class="nano-stat-divider"></div>
-      <div class="nano-stat"><span class="nano-stat-n">17+</span><span class="nano-stat-l">Years Research</span></div>
+      <div class="nano-stat"><span class="nano-stat-n">60+</span><span class="nano-stat-l">Years Research</span></div>
     </div>
   </div>
   <!-- Floating molecule SVG -->
@@ -1740,6 +1780,27 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
 })();
 </script>
 
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="comm-top fade-in">
+      <div>
+        <div class="section-eyebrow">Blog</div>
+        <h2 class="section-title">Notes &amp;<br><em>Articles</em></h2>
+      </div>
+      <p class="comm-lead">Short reads on nanoscience, research life, and communicating science to a wider audience.</p>
+    </div>
+
+    <div id="cms-blog-posts" class="blog-grid fade-in">
+      <div class="blog-empty" style="grid-column:1/-1;">
+        No articles published yet — check back soon.
+      </div>
+    </div>
+
+    <div class="blog-cta fade-in"><a href="#contact" class="btn btn-outline">Suggest a Topic →</a></div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -2054,6 +2115,28 @@ try {
         return `<div class="intl-card"><div class="intl-period">${esc(p.period||'')}</div><div class="intl-grant">${esc(p.grant||'')}</div><h3>${esc(p.title||'')}</h3><p>${esc(p.desc||'')}</p><div class="intl-outcomes">${outcomes}</div></div>`;
       }).join('');
     }
+
+    // ── 6b. Blog posts (auto-discovered via Netlify Function — no manual index file) ──
+    fetch('/.netlify/functions/blog-list', {cache:'no-cache'})
+      .then(r => r.ok ? r.json() : null).catch(() => null)
+      .then(posts => {
+        const blEl = document.getElementById('cms-blog-posts');
+        if (!blEl) return;
+        const published = (Array.isArray(posts) ? posts : []).filter(p => p.published !== false);
+        if (!published.length) return; // keep "no articles yet" placeholder
+        const sorted = [...published].sort((a,b) => new Date(b.date||0) - new Date(a.date||0));
+        blEl.innerHTML = sorted.map(post => {
+          const img = post.image
+            ? `<img src="${esc(post.image)}" alt="${esc(post.title || '')}">`
+            : '';
+          const dateStr = post.date
+            ? new Date(post.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+            : '';
+          const tag = post.tag || 'Article';
+          const link = 'article.html?slug=' + encodeURIComponent(post.slug || '');
+          return `<div class="blog-card"><div class="blog-card-vis">${img}</div><div class="blog-card-body"><div class="blog-card-meta"><span>${esc(tag)}</span>${dateStr ? `<span>${esc(dateStr)}</span>` : ''}</div><h4>${esc(post.title || '')}</h4><p>${esc(post.excerpt || '')}</p><a href="${esc(link)}" class="blog-card-link">Read More →</a></div></div>`;
+        }).join('');
+      });
 
     // ── 7. Media ──
     fetch('_data/media-index.json', {cache:'no-cache'})
