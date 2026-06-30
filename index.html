@@ -469,7 +469,28 @@ nav.scrolled{box-shadow:0 4px 24px rgba(28,43,74,0.1);}
 
 /* ── BLOG ── */
 #blog{background:var(--bg);}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:2.5rem;}
+.blog-slider-wrap{position:relative;margin-bottom:2.5rem;}
+.blog-grid{
+  display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding-bottom:0.5rem;
+  -ms-overflow-style:none;scrollbar-width:none;
+}
+.blog-grid::-webkit-scrollbar{display:none;}
+.blog-grid > .blog-card{flex:0 0 calc((100% - 2.8rem)/3);scroll-snap-align:start;}
+.blog-grid > .blog-empty{flex:1 0 100%;}
+.blog-slider-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;
+  background:var(--white);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:var(--shadow);z-index:2;
+  transition:background 0.2s,transform 0.2s;
+}
+.blog-slider-nav:hover{background:var(--navy);}
+.blog-slider-nav:hover svg path{stroke:white;}
+.blog-slider-nav.prev{left:-21px;}
+.blog-slider-nav.next{right:-21px;}
+.blog-slider-nav svg{width:18px;height:18px;}
 .blog-card{
   background:var(--white);border-radius:var(--radius-lg);
   border:1px solid var(--border);overflow:hidden;
@@ -801,7 +822,8 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   /* Communication */
   .comm-top{grid-template-columns:1fr;gap:1.5rem;}
   .comm-cards-grid{grid-template-columns:1fr 1fr;gap:1rem;}
-  .blog-grid{grid-template-columns:1fr 1fr;gap:1rem;}
+  .blog-grid{gap:1rem;}
+  .blog-grid > .blog-card{flex:0 0 calc((100% - 1rem)/2);}
 
   /* Dark split */
   .vis-split{grid-template-columns:1fr;height:auto;}
@@ -888,9 +910,13 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
   .comm-cards-grid{grid-template-columns:1fr;gap:0.8rem;}
   .comm-card{border-radius:8px;}
   .comm-card-vis{height:130px;}
-  .blog-grid{grid-template-columns:1fr;gap:0.8rem;}
+  .blog-grid{gap:0.8rem;}
+  .blog-grid > .blog-card{flex:0 0 100%;}
   .blog-card{border-radius:8px;}
   .blog-card-vis{height:130px;}
+  .blog-slider-nav{width:36px;height:36px;}
+  .blog-slider-nav.prev{left:0.3rem;}
+  .blog-slider-nav.next{right:0.3rem;}
 
   /* Dark split */
   .vis-split,.dark-split-inner{grid-template-columns:1fr;}
@@ -1789,13 +1815,21 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
       <p class="comm-lead">Short reads on nanoscience, research life, and communicating science to a wider audience.</p>
     </div>
 
-    <div id="cms-blog-posts" class="blog-grid fade-in">
-      <div class="blog-empty" style="grid-column:1/-1;">
-        No articles published yet — check back soon.
+    <div class="blog-slider-wrap fade-in">
+      <button class="blog-slider-nav prev" id="blog-prev" aria-label="Previous articles">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#1C2B4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="cms-blog-posts" class="blog-grid">
+        <div class="blog-empty">
+          No articles published yet — check back soon.
+        </div>
       </div>
+      <button class="blog-slider-nav next" id="blog-next" aria-label="Next articles">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#1C2B4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
 
-    <div class="blog-cta fade-in"><a href="#contact" class="btn btn-outline">Suggest a Topic →</a></div>
+    <div class="blog-cta fade-in"><a href="#contact" class="btn btn-navy">Suggest a Topic →</a></div>
   </div>
 </section>
 
@@ -1924,6 +1958,24 @@ if (hbgBtn && mobileM) {
   });
 }
 function closeMobileMenu() { if (mobileM) mobileM.classList.remove('open'); }
+
+/* ── Blog slider navigation ── */
+(function () {
+  const track = document.getElementById('cms-blog-posts');
+  const prevBtn = document.getElementById('blog-prev');
+  const nextBtn = document.getElementById('blog-next');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function scrollByCard(dir) {
+    const card = track.querySelector('.blog-card');
+    const gap = 22; // approx 1.4rem
+    const step = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    track.scrollBy({ left: dir * step, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => scrollByCard(-1));
+  nextBtn.addEventListener('click', () => scrollByCard(1));
+})();
 function closeMenu() { closeMobileMenu(); }
 
 /* ── Fade-in observer ── */
