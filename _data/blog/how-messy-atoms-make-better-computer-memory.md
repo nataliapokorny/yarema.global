@@ -5,6 +5,7 @@ tag: Research
 excerpt: A new liquid-ink method turns solid memory materials into printable
   solutions, offering a faster and cheaper way to manufacture phase-change
   memory chips.
+image: /static/uploads/знімок-екрана-2026-06-30-о-18.04.06.png
 published: true
 ---
 As artificial intelligence and cloud computing grow, the world needs better ways to store massive amounts of data. One promising solution is Phase-Change Memory (PCM). This technology stores digital information by rapidly heating a material, causing its internal atoms to switch between a messy, disorganized state and a neat, crystal-like grid.
