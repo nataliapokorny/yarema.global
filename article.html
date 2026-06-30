@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article · Maksym Yarema</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+:root {
+  --navy: #1C2B4A;
+  --steel: #4A6FA5;
+  --amber: #E8A020;
+  --bg: #F8F7F4;
+  --white: #FFFFFF;
+  --text: #111827;
+  --muted: #6B7280;
+  --border: rgba(28,43,74,0.09);
+  --radius: 4px;
+  --radius-lg: 14px;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --shadow: 0 2px 16px rgba(28,43,74,0.08);
+  --shadow-lg: 0 8px 40px rgba(28,43,74,0.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;}
+
+/* ── NAV (matches main site) ── */
+nav{
+  position:sticky;top:0;z-index:50;background:var(--white);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:74px;
+}
+.nav-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--navy);text-decoration:none;}
+.nav-back{
+  font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.04em;
+  color:var(--steel);text-decoration:none;display:flex;align-items:center;gap:0.4rem;
+}
+.nav-back:hover{color:var(--amber);}
+
+/* ── ARTICLE LAYOUT ── */
+.article-wrap{max-width:760px;margin:0 auto;padding:4rem 1.5rem 6rem;}
+.article-meta{
+  font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem;
+  display:flex;gap:0.7rem;align-items:center;flex-wrap:wrap;
+}
+.article-meta span:not(:last-child)::after{content:'·';margin-left:0.7rem;color:var(--border);}
+.article-title{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(2rem,5vw,2.8rem);color:var(--navy);
+  line-height:1.18;margin-bottom:2rem;
+}
+.article-cover{
+  width:100%;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:2.5rem;
+  background:linear-gradient(135deg,#0e1a2e 0%,#1a2e4a 100%);
+}
+.article-cover img{width:100%;display:block;max-height:420px;object-fit:cover;}
+
+/* ── MARKDOWN BODY STYLES ── */
+.article-body{font-size:1.05rem;color:var(--text);}
+.article-body p{margin-bottom:1.4rem;line-height:1.85;}
+.article-body h1,.article-body h2,.article-body h3{
+  font-family:var(--font-display);color:var(--navy);font-weight:600;
+  margin:2.2rem 0 1rem;line-height:1.3;
+}
+.article-body h1{font-size:1.8rem;}
+.article-body h2{font-size:1.5rem;}
+.article-body h3{font-size:1.2rem;}
+.article-body ul,.article-body ol{margin:0 0 1.4rem 1.4rem;}
+.article-body li{margin-bottom:0.5rem;line-height:1.75;}
+.article-body a{color:var(--steel);text-decoration:underline;text-underline-offset:2px;}
+.article-body a:hover{color:var(--amber);}
+.article-body blockquote{
+  border-left:3px solid var(--amber);padding:0.2rem 0 0.2rem 1.2rem;
+  margin:1.6rem 0;color:var(--muted);font-style:italic;
+}
+.article-body img{max-width:100%;border-radius:var(--radius);margin:1.4rem 0;}
+.article-body code{
+  font-family:var(--font-mono);background:rgba(28,43,74,0.06);
+  padding:0.15rem 0.4rem;border-radius:3px;font-size:0.88em;
+}
+.article-body pre{
+  background:var(--navy);color:#fff;padding:1.2rem;border-radius:var(--radius);
+  overflow-x:auto;margin:1.4rem 0;
+}
+.article-body pre code{background:none;padding:0;color:inherit;}
+.article-body hr{border:none;border-top:1px solid var(--border);margin:2.4rem 0;}
+
+.article-footer{
+  margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-family:var(--font-mono);font-size:0.74rem;letter-spacing:0.04em;
+  padding:0.7rem 1.3rem;border:1px solid var(--navy);border-radius:var(--radius);
+  color:var(--navy);text-decoration:none;transition:background 0.2s,color 0.2s;
+}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+
+/* ── STATES ── */
+.state-box{
+  max-width:560px;margin:5rem auto;padding:3rem 2rem;text-align:center;
+  color:var(--muted);font-size:0.95rem;
+}
+.state-box h2{font-family:var(--font-display);color:var(--navy);font-size:1.6rem;margin-bottom:0.8rem;}
+.skeleton{
+  background:linear-gradient(90deg,var(--border) 25%,rgba(28,43,74,0.04) 50%,var(--border) 75%);
+  background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:6px;
+}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+.sk-line{height:0.9rem;margin-bottom:0.8rem;}
+.sk-title{height:2.4rem;width:80%;margin-bottom:2rem;}
+.sk-cover{height:280px;width:100%;border-radius:var(--radius-lg);margin-bottom:2.5rem;}
+
+@media(max-width:640px){
+  nav{padding:0 1.2rem;height:62px;}
+  .article-wrap{padding:2.5rem 1.2rem 4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html#home" class="nav-logo"><span style="color:var(--amber)">•</span>Yarema</a>
+  <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+</nav>
+
+<div class="article-wrap" id="article-root">
+  <!-- Loading skeleton (shown until content loads or fails) -->
+  <div id="article-loading">
+    <div class="skeleton sk-line" style="width:30%"></div>
+    <div class="skeleton sk-title"></div>
+    <div class="skeleton sk-cover"></div>
+    <div class="skeleton sk-line"></div>
+    <div class="skeleton sk-line"></div>
+    <div class="skeleton sk-line" style="width:70%"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const root = document.getElementById('article-root');
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function showState(title, desc) {
+    root.innerHTML = `<div class="state-box"><h2>${esc(title)}</h2><p>${esc(desc)}</p>` +
+      `<p style="margin-top:1.5rem;"><a href="index.html#blog" class="btn-outline">← Back to Blog</a></p></div>`;
+  }
+
+  // Minimal frontmatter parser: expects
+  // ---
+  // key: value
+  // ---
+  // markdown body...
+  function parseFrontmatter(raw) {
+    const match = raw.match(/^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*([\s\S]*)$/);
+    if (!match) return { data: {}, body: raw };
+    const [, fmBlock, body] = match;
+    const data = {};
+    fmBlock.split(/\r?\n/).forEach(line => {
+      const m = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+      if (!m) return;
+      let val = m[2].trim();
+      // strip surrounding quotes
+      if (/^".*"$/.test(val) || /^'.*'$/.test(val)) val = val.slice(1, -1);
+      data[m[1]] = val;
+    });
+    return { data, body };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+
+  if (!slug) {
+    showState('Article not found', 'No article was specified.');
+    return;
+  }
+
+  const mdUrl = '_data/blog/' + slug + '.md';
+
+  fetch(mdUrl, { cache: 'no-cache' })
+    .then(r => {
+      if (!r.ok) throw new Error('not found');
+      return r.text();
+    })
+    .then(raw => {
+      const { data, body } = parseFrontmatter(raw);
+
+      if (data.published === 'false') {
+        showState('Article unavailable', 'This article is not currently published.');
+        return;
+      }
+
+      document.title = (data.title || 'Article') + ' · Maksym Yarema';
+
+      const dateStr = data.date
+        ? new Date(data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+        : '';
+      const tag = data.tag || 'Article';
+
+      const coverHtml = data.image
+        ? `<div class="article-cover"><img src="${esc(data.image)}" alt="${esc(data.title || '')}"></div>`
+        : '';
+
+      const bodyHtml = (window.marked ? marked.parse(body || '') : '<p>' + esc(body || '') + '</p>');
+
+      root.innerHTML = `
+        <div class="article-meta"><span>${esc(tag)}</span>${dateStr ? `<span>${esc(dateStr)}</span>` : ''}</div>
+        <h1 class="article-title">${esc(data.title || 'Untitled')}</h1>
+        ${coverHtml}
+        <div class="article-body">${bodyHtml}</div>
+        <div class="article-footer">
+          <a href="index.html#blog" class="btn-outline">← All Articles</a>
+          <a href="index.html#contact" class="btn-outline">Get in Touch →</a>
+        </div>
+      `;
+    })
+    .catch(() => {
+      showState('Article not found', 'The article you are looking for does not exist or may have been moved.');
+    });
+})();
+</script>
+
+</body>
+</html>
