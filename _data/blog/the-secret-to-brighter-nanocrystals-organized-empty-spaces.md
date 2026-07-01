@@ -4,7 +4,7 @@ date: 2026-06-30
 tag: Research
 excerpt: Discover how the precise atomic arrangement inside nanocrystals — not
   just their size or composition — is the key to making them glow brighter.
-image: /static/uploads/дизайн-без-назви-копія.png
+image: /static/uploads/дизайн-без-назви-копія-2.png
 published: true
 ---
 Imagine a classroom where students can sit randomly, or they can sit in a very specific pattern. We have found that for tiny glowing particles called nanocrystals, this kind of internal organization is the secret to making them shine brilliantly.
