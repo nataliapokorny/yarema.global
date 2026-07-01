@@ -1179,14 +1179,14 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
           <!-- Layer labels left side -->
           <text x="8" y="47" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">TOP ELECTRODE</text>
           <text x="8" y="107" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(232,160,32,0.85)" letter-spacing="1.5">NANOCRYSTAL LAYER</text>
-          <text x="8" y="167" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">TRANSPORT LAYER</text>
-          <text x="8" y="227" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">BOTTOM ELECTRODE</text>
+          <text x="8" y="167" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">BOTTOM ELECTRODE</text>
+          <text x="8" y="227" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">TRANSPORT LAYER</text>
           <text x="8" y="287" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">SUBSTRATE</text>
           <!-- Layers (3 and 4 swapped back) -->
           <rect x="148" y="30" width="360" height="32" rx="3" fill="url(#lg1)"/>
           <rect x="148" y="90" width="360" height="32" rx="3" fill="url(#lg2)"/>
-          <rect x="148" y="150" width="360" height="32" rx="3" fill="url(#lg1)" opacity="0.55"/>
-          <rect x="148" y="210" width="360" height="32" rx="3" fill="url(#lg3)"/>
+          <rect x="148" y="150" width="360" height="32" rx="3" fill="url(#lg3)"/>
+          <rect x="148" y="210" width="360" height="32" rx="3" fill="url(#lg1)" opacity="0.55"/>
           <rect x="148" y="270" width="360" height="32" rx="3" fill="url(#lg3)" opacity="0.5"/>
           <!-- Nanocrystals with glow -->
           <g filter="url(#glow2)">
@@ -1201,11 +1201,11 @@ footer{background:var(--navy);padding:4rem 3rem 2.5rem;}
             <circle cx="468" cy="107" r="5" fill="#E8A020"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite" begin="0.9s"/></circle>
             <circle cx="499" cy="103" r="6" fill="#ffb830"><animate attributeName="opacity" values="0.85;0.3;0.85" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
           </g>
-          <!-- Charge flow arrow - curved path -->
-          <path d="M 510 46 C 530 100, 530 160, 510 214" stroke="#4A6FA5" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.55">
+          <!-- Charge flow arrow - square path -->
+          <path d="M 510 46 L 530 46 L 530 214 L 510 214" stroke="#4A6FA5" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.55" stroke-linejoin="round">
             <animate attributeName="stroke-dashoffset" values="0;-30" dur="1.4s" repeatCount="indefinite"/>
           </path>
-          <polygon points="510,222 506,212 514,212" fill="#4A6FA5" opacity="0.55"/>
+          <polygon points="510,214 520,209 520,219" fill="#4A6FA5" opacity="0.55"/>
           <!-- Caption -->
           <text x="328" y="328" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="rgba(232,160,32,0.45)" letter-spacing="2.5">COLLOIDAL NANOCRYSTAL NANOSCALE DEVICE</text>
         </svg>
