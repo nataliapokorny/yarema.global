@@ -4,7 +4,7 @@ date: 2026-06-30
 tag: Research
 excerpt: A clever underpressure technique lets labs scale up nanocrystal
   production up to 200 times — without expensive industrial equipment.
-image: /static/uploads/знімок-екрана-2026-06-30-о-18.10.10.png
+image: /static/uploads/дизайн-без-назви-копія-2.png
 published: true
 ---
 Making perfectly sized nanocrystals is a lot like cooking a delicate recipe where timing is everything. To get particles that are all exactly the same size, scientists use a method called hot-injection. This involves instantly shooting a lot of room-temperature chemical ingredients into a flask of hot liquids. This sudden mixture creates a quick burst of miniscule nanocrystal seeds that all grow uniformly. It works beautifully for tiny, test-tube-sized batches. But there is a major physical problem: how do you inject giant volumes of liquid instantly if you want to make an industrial-sized batch? You simply cannot push a giant syringe fast enough by hand.
