@@ -5,7 +5,7 @@ tag: Research
 excerpt: A study of phase-change memory material GeTe reveals a hidden,
   step-by-step atomic blueprint behind its lightning-fast switch from disorder
   to order.
-image: /static/uploads/дизайн-без-назви-2.png
+image: /_data/media/1.png
 published: true
 ---
 Have you ever wondered how computers store information so quickly? One exciting technology is Phase-Change Memory (PCM). It works by rapidly heating special materials, forcing their atoms to switch back and forth between two different physical states to represent digital data (the 1s and 0s).
